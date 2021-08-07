@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load markdown_deux_tags %}
+{% load static %}
 {% block title %} {{ posts.title }} - 我的貼文 {% endblock %}
 {% block headmessage %}
     <h3 style="font-family: 微軟正黑體">{{ posts.title }}</h3>
@@ -7,6 +8,6 @@
 {% endblock %}
 {% block content %}
     <p style="font-family: 微軟正黑體;font-size: 12pt;letter-spacing: 2pt">
-        {{ posts.body| markdown }}
+        {{ posts.body| safe | markdown }}
     </p>
 {% endblock %}
